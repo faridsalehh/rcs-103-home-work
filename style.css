@@ -1,0 +1,54 @@
+body{
+    margin: 0 auto;
+}
+
+.box1{
+    border: 5px solid green;
+    /* padding: 30px; */
+    background-color: aqua;
+}
+
+.boxItem{
+    border: 2px solid black;
+    font-size: 30px;
+    cursor: pointer;
+    cursor: not-allowed;
+    /* display: inline-block; */
+}
+
+.boxItem2{
+    border: 2px solid black;
+    /* display: inline-block; */
+    /* margin-left: 40px;
+    margin-right: 40px; */
+}
+
+.boxItem3{
+    border: 2px solid black;
+    /* display: inline-block; */
+    /* margin-left: 40px; */
+}
+
+
+div{
+    color: green;
+}
+
+a{
+    color: red; /* burada a tagi div icinde bele olsa a rengini deyismek ucun ayrica belirtmek lazimdir*/
+}
+#logo{ /* bu id ucun olan # ile*/
+    color: blueviolet; /* div icindeki sirf bir sozun rengini deyismek ucun id ve ya classlardan istifade olunur*/
+}
+
+.someText{ /* bu da classlarda istifade olunur . ile*/
+    color: purple;
+}
+
+.box1{
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
