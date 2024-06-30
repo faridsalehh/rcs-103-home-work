@@ -12,7 +12,7 @@ body{
     border: 2px solid black;
     font-size: 30px;
     cursor: pointer;
-    cursor: not-allowed;
+    /* cursor: not-allowed; */
     /* display: inline-block; */
 }
 
@@ -51,4 +51,17 @@ a{
     justify-content: space-around;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+.item9{
+    color: rebeccapurple;
+    background-color: green;
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;/* elemntin ozunden kenardaki mesafe  */
+    /* padding: 40px;*/ /*elemntin xetti ile oz daxilinde */
+    box-sizing: border-box;
 }
