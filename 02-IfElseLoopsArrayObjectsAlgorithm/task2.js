@@ -333,6 +333,7 @@
 // // console.log(clear([0, 1, false, 2, undefined, '', 3, null]); -> [1, 2, 3]
 // //
 // //
+
 // a = [0, 1, false, 2, undefined, "", 3, null];
 
 // const sil = (deyerler) => {
@@ -355,7 +356,51 @@
 // //
 // //
 
+///////////////////////////////////////////////////////////////
+//ikinci defe koda baxmadan yazdigim
+//
+// const a = (duplicate) => {
+//   let seen = {};
+
+//   let uniqeQuery = [];
+//   for (i = 0; i < duplicate.length; i++) {
+//     if (!seen[duplicate[i]]) {
+//       seen[duplicate[i]] = true;
+//       uniqeQuery.push(duplicate[i]);
+//     }
+//   }
+//   return uniqeQuery;
+// };
+
+// let array = [1, 2, 3, 4, 1, 1, 2, 4, 5];
+
+// console.log(a(array));
+//////////////////////////////////////////////////////////////
+//
+//
+
 // // 19. Write a function that compares two arrays and returns true if they are identical.
+
+/////////////////////////////////////////////////////////////////
+//ikinci defe koda baxmadan yazdigim
+// let a = [1, 3, 4, 56];
+// let b = [1, 3, 4, 5,6];
+// console.log(a.length);
+
+// const c = (a1, b1) => {
+//   if (a1.length !== b1.length) {
+//     return false;
+//   }
+//   for (i = 0; i < a1.length; i++) {
+//     if (a1[i] ==! b1[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(c(a, b));
+///////////////////////////////////////////////////////////////////
+
 // const isEqual = (birinciArray, ikinciArray) => {
 //   if (birinciArray.length !== ikinciArray.length) {
 //     return false;
@@ -377,6 +422,25 @@
 
 // // 20. Bir string ve bir char qebul eden bir function yazın.Əgər daxil olunmuş char string-də varsa char-ın yerləşdiyi indekslərin cəmini
 // //yoxdursa -1 return etsin. Məsələn salam və 'a' daxil olunarsa output 1+3=4 olmalıdır.
+
+// ////////////////////////////////////////////////////////////////////
+// //ikinci defe koda baxmadan yazdigim
+
+// const a = (string, char) => {
+//   let index = 0;
+//   let varsa = false;
+
+//   for (let i = 0; i < string.length; i++) {
+//     if (string[i] === char) {
+//       index += i;
+//       varsa = true;
+//     }
+//   }
+//   return varsa ? index : -1;
+// };
+// console.log(a("salam", "s"));
+// /////////////////////////////////////////////////////////////////
+
 // const findCharIndices = (string, character) => {
 //   let sumIndices = 0;
 //   for (let i = 0; i < string.length; i++) {
@@ -393,7 +457,27 @@
 // //
 // //
 
-// // 21. Bir function yazın parametr olaraq bir array, bir index və bir string qəbul edir. Və daxil olunmuş indeksə əsasən göndərilmiş string-i həmin array-ə əlavə edib return etsin. Məsələn arqument olaraq - ['a','salam','b','world'], 3, "dev" göndərilərsə o zaman dev string-ini 3cu indekse elave etmelidir, eger gonderilmish indeks array-in uzunlugundan boyuk olarsa o zaman hemin string array-in en sonuna elave edilsin.
+// // 21. Bir function yazın parametr olaraq bir array, bir index və bir string qəbul edir. Və daxil olunmuş indeksə əsasən
+//göndərilmiş string-i həmin array-ə əlavə edib return etsin. Məsələn arqument olaraq - ['a','salam','b','world'], 3, "dev" göndərilərsə o zaman dev string-ini
+//3cu indekse elave etmelidir, eger gonderilmish indeks array-in uzunlugundan boyuk olarsa o zaman hemin string array-in en sonuna elave edilsin.
+
+// // ////////////////////////////////////////////////////////////////////
+// // //ikinci defe koda baxmadan yazdigim
+// const newFunc = (array, index, string) => {
+//   if (index >= array.length) {
+//     array.push(string);
+//   }
+//   for (let i = 0; i < array.length; i++) {
+//     if (index === i) {
+//       array.splice(index, 0, string);
+//     }
+//   }
+//   return array;
+// };
+// console.log(newFunc(["a", "salam", "b", "world"], 2, "dev"));
+// /////////////////////////////////////////////////////////////////
+//
+// //
 // function addStringAtIndex(array, index, str) {
 //   if (index >= array.length) {
 //     array.push(str);
@@ -406,7 +490,20 @@
 // //
 // //
 
-// // 22. Bir function yazın, parametr olaraq 2 array qebul edir və bir char qebul edir.gonderilmish char-a esasen hemin iki array-i ve elementlerini birleshdirib bir string olaraq return etmelidir. Meselen -> [1,2] [3,4] '*' gonderilerse output -> 1*2*3*4 string-i olmalidir.
+// // 22. Bir function yazın, parametr olaraq 2 array qebul edir və bir char qebul edir.gonderilmish char-a esasen hemin iki array-i ve elementlerini birleshdirib bir
+//string olaraq return etmelidir. Meselen -> [1,2] [3,4] '*' gonderilerse output -> 1*2*3*4 string-i olmalidir.
+
+// ////////////////////////////////////////////////////////////////////
+// // //ikinci defe koda baxmadan yazdigim
+// const birlesdir = (array1, array2, char) => {
+//   let f = array1.concat(array2);
+//   return f.join(char);
+// };
+// console.log(birlesdir([1, 2], [3, 4], "*"));
+// //////////////////////////////////////////////////////////////////
+// //
+// //
+
 // function mergeArraysToString(arr1, arr2, char) {
 //   let result = arr1.join(char) + char + arr2.join(char);
 //   return result;
@@ -424,20 +521,48 @@
 // // ];
 
 // // #studentlərin ortalama score'nu yeni bir arrayda yığın
+////////////////////////////////////////////////////////////////////////////
+// // //ikinci defe koda baxmadan yazdigim
+
+let telebeler = [
+  { ad: "Eli", score: [90, 85, 92] },
+  { ad: "Davud", score: [90, 85, 92] },
+  { ad: "Mamal", score: [100, 100, 100] },
+  { ad: "Kamil", score: [90, 95, 85] },
+];
+for(let i=0;i<telebeler.length;i++){
+  telebeler[i].score.map
+}
+
+console.log(telebeler[0].score[1]);
+
+
+// let a=[4,5,6,7,8,9,10,11]
+// let k=a.map(i=>{
+//   return i*2
+// })
+// console.log(k);
+
+// let x=a.filter(i=>{
+//   return i>=8
+// })
+// console.log(x);
 // //
-// let students = [
-//   { name: "Ali", scores: [90, 85, 92] },
-//   { name: "Davud", scores: [100, 100, 100] },
-//   { name: "Mammal", scores: [75, 80, 85] },
-//   { name: "Camil", scores: [90, 95, 85] },
-// ];
+// //
+// //
+let students = [
+  { name: "Ali", scores: [90, 85, 92] },
+  { name: "Davud", scores: [100, 100, 100] },
+  { name: "Mammal", scores: [75, 80, 85] },
+  { name: "Camil", scores: [90, 95, 85] },
+];
 
-// let averages = students.map((student) => {
-//   let sum = student.scores.reduce((total, score) => total + score, 0);
-//   return { name: student.name, average: sum / student.scores.length };
-// });
+let averages = students.map((student) => {
+  let sum = student.scores.reduce((total, score) => total + score, 0);
+  return { name: student.name, average: sum / student.scores.length };
+});
 
-// console.log(averages);
+console.log(averages);
 // //
 // //
 
