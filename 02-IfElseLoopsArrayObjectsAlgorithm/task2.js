@@ -520,22 +520,20 @@
 // //   { name: "Camil", scores: [90, 95, 85] },
 // // ];
 
-// // #studentlərin ortalama score'nu yeni bir arrayda yığın
-////////////////////////////////////////////////////////////////////////////
-// // //ikinci defe koda baxmadan yazdigim
+// // // #studentlərin ortalama score'nu yeni bir arrayda yığın
+// let telebeler = [
+//   { ad: "Ali", score: [90, 85, 92] },
+//   { ad: "Davud", score: [90, 85, 92] },
+//   { ad: "Mamal", score: [100, 100, 100] },
+//   { ad: "Kamil", score: [90, 95, 85] },
 
-let telebeler = [
-  { ad: "Eli", score: [90, 85, 92] },
-  { ad: "Davud", score: [90, 85, 92] },
-  { ad: "Mamal", score: [100, 100, 100] },
-  { ad: "Kamil", score: [90, 95, 85] },
-];
-for(let i=0;i<telebeler.length;i++){
-  telebeler[i].score.map
-}
+// ];
 
-console.log(telebeler[0].score[1]);
-
+// let ortalama = telebeler.map((student) => {
+//   let cem = student.score.reduce((toplam, hesab) => toplam + hesab);
+//   return { ad: student.ad, ortalamalar: cem / student.score.length };
+// });
+// console.log(ortalama);
 
 // let a=[4,5,6,7,8,9,10,11]
 // let k=a.map(i=>{
@@ -550,20 +548,9 @@ console.log(telebeler[0].score[1]);
 // //
 // //
 // //
-let students = [
-  { name: "Ali", scores: [90, 85, 92] },
-  { name: "Davud", scores: [100, 100, 100] },
-  { name: "Mammal", scores: [75, 80, 85] },
-  { name: "Camil", scores: [90, 95, 85] },
-];
 
-let averages = students.map((student) => {
-  let sum = student.scores.reduce((total, score) => total + score, 0);
-  return { name: student.name, average: sum / student.scores.length };
-});
-
-console.log(averages);
-// //
+// console.log(averages);
+// // // //
 // //
 
 // // 24.
@@ -582,6 +569,8 @@ console.log(averages);
 
 // // # webTechs arrayında olan elementlərin uzunluğu 4'dən böyük olanları yeni bir arraya yığın
 // //
+/////////////////////////////////////////////////////////////////
+// // //ikinci defe koda baxmadan yazdigim
 // const webTechs = [
 //   "HTML",
 //   "CSS",
@@ -594,13 +583,22 @@ console.log(averages);
 //   "MongDB",
 // ];
 
+// let yeniArray = [];
+// for (let i = 0; i < webTechs.length; i++) {
+//   if (webTechs[i].length > 4) {
+//     yeniArray.push(webTechs[i]);
+//   }
+// }
+// console.log(yeniArray);
+/////////////////////////////////////////////////////////////////
+
 // const filteredTechs = webTechs.filter((tech) => tech.length > 4);
 
 // console.log(filteredTechs);
 // //
-// //
+// // //
 
-// // 25.# product arrayindəki producların qiymətləri cəmini və ortalamasını tapın\
+// // // // 25.# product arrayindəki producların qiymətləri cəmini və ortalamasını tapın\
 // const products = [
 //   {
 //     id: 1,
@@ -634,19 +632,34 @@ console.log(averages);
 //   },
 // ];
 
-// products.sort((a, b) => a.price - b.price);
-
-// console.log(products);
-// //
+// /////////////////////////////////////////////////////
+// // // //ikinci defe koda baxmadan yazdigim
+// let cem=products.reduce((toplam, eleman)=>toplam+eleman.price,0)// 0 verilmezse products dizisinin ilk elemanini yani id 1 olan komple objecti alir o da hatali olacaktir.
+// //buradaki eleman products dizisinin ilk elemanina esittir yani id 1 ile baslayan kompe objeye. eleman.price diyerek sadece price deyerini aliriz.
+// console.log("productlarin qiymetleri cemi="+cem);
+// console.log("ortalama="+cem/products.length);
+// // //
 // //
 
 // // 26. countries arrayində a ilə başlayıb a ilə bitən ölkələri tapın
-// let countries = ["Azerbaijan", "Albania", "Germany", "America", "Russian"];
+let countries = [
+  "Azerbaijan",
+  "Albania",
+  "Germany",
+  "America",
+  "Russian",
+  "antra",
+];
 
-// let filteredCountries = countries.filter((country) => {
-//   let firstChar = country.charAt(0).toLowerCase(); // Olke adının ilk herfini kiçik herfe çevir
-//   let lastChar = country.charAt(country.length - 1).toLowerCase(); // Olke adının son herfini kivk herfe cevir
-//   return firstChar === "a" && lastChar === "a";
+// let result = countries.filter((country) => {
+//   let ilkHerf = country.charAt(0).toUpperCase();
+//   let sonHerf = country.charAt(country.length - 1).toUpperCase();
+//   return ilkHerf === "A" && sonHerf === "A";
 // });
 
-// console.log(filteredCountries);
+// let result=countries.filter((country)=>{
+//   return (country.toLowerCase().startsWith("a")&&country.toLowerCase().endsWith("a"))
+// })
+let result = countries.filter((country) => /^[aA].*[aA]$/.test(country));
+
+console.log(result);
